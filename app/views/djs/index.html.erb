@@ -1,14 +1,16 @@
+<input id="search" type="search" placeholder="Search DJs" autocomplete="off">
 <ul>
   <% for dj in @djs%>
-    <li>
+    <li class="djItem" data-name="<%= dj.full_name.parameterize %>" data-stage-name="<%= dj.stage_name.parameterize %>" >
       <%= dj.stage_name %>
       <br>
       <%= dj.full_name %>
+      <% if current_competition %>
+        <%= render partial: 'bid_form', locals: {dj: dj} %>
+      <% else %>
+        <%= link_to "Sign in to bid!", new_competition_session_url %>
+      <% end %>
     </li>
-    <% if current_competition %>
-      <%= render partial: 'bid_form', locals: {dj: dj} %>
-    <% else %>
-      <%= link_to "Sign in to bid!", new_competition_session_url %>
-    <% end %>
+    
   <% end %>
 </ul>
