@@ -4,7 +4,7 @@
   padding:10px;
 }
 .djs {
-  li {
+  li.djItem {
     float:left;
     width: 260px;
     margin: 0 40px 20px 0;
@@ -13,6 +13,7 @@
     }
     h4 {
       font-weight:800;
+      display: inline-block;
     }
     span {
       color: lighten($brown2, 10%);
@@ -39,4 +40,13 @@ aside {
       border-bottom: 1px solid $brown2;
     }
   }
+}
+.links  {
+  display:block;
+  overflow: hidden;
+}
+.links li {
+  display:inline-block;
+  margin-right: 5px;
+  width:16px;
 }
