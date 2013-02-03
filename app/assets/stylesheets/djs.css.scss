@@ -1,0 +1,18 @@
+.djs {
+  li {
+    display: inline-block;
+    max-width: 300px;
+    margin: 0 20px 20px;
+    h4 {
+      font-weight:800;
+    }
+    span {
+      color: lighten($brown2, 10%);
+      font-size: $font-size * 0.8;
+    }
+  }
+  textarea {
+    margin: 5px 0;
+    font-size: $font-size * 0.9;
+  }
+}
