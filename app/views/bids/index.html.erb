@@ -3,6 +3,12 @@
     <% for bid in @bids %>
       <li>
         <%= bid.competition.name %> bid <%= bid.offering %> on <%= bid.dj.stage_name %>.
+        <% if !voted?(bid, @ip) %>
+          <%= form_for Vote.new do |v| %>
+            <%= v.hidden_field :bid_id, value: bid.id %>
+            <%= v.submit "Vote" %>
+          <% end %>
+        <% end %>
       </li>
     <% end %>
   </ul>

@@ -11,6 +11,7 @@ class BidsController < ApplicationController
 
   def index
     @bids = Bid.all
+    @ip = request.remote_ip
   end
 
   def show

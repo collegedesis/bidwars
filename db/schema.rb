@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203095950) do
+ActiveRecord::Schema.define(:version => 20130203203642) do
 
   create_table "bids", :force => true do |t|
     t.integer  "dj_id"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(:version => 20130203095950) do
     t.string   "soundcloud"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "bid_id"
+    t.string   "submitted_by_ip"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
