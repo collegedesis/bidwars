@@ -21,27 +21,19 @@
     <% end %>
   </div>
   <div class="content">
-    <div class="main">
-      <%= yield %>
-    </div>
-    <aside>
-      <h1>The Best Brown Party!</h1>
-      <h3>Round 2</h3>
-      <p>
-        On February 10th, some of the best South Asian DJs are coming together to play their music for #brownkids all around America. 
-      </p>
-      <p>
-        Each hour of this 8 hour party is sponsored by an amazing event or competition from around the country. To help promote these events, we're auctioning off DJ time. If you're one of these competitions <% if !current_competition %> <%= link_to "sign in", new_competition_session_path %><% end %> and bid to get these DJs to play during your hour!
-      </p>
-      <h3>Recent Bids</h3>
-      <ul>
-        <% for bid in @bids %>
-          <li>
-            <%bid.competition %> bid <% bid.offering %> on <%= bid.dj.stage_name %>.
-          </li>
+    
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p><%= flash[:alert] %></p>
+      <% end %>
+      <% if flash[:errors] %>
+        <% for error in flash[:errors].messages %>
+          <%= error %>
         <% end %>
-      </ul>
-    </aside>
+      <% end %>
+      <%= yield %>
   </div>
   <div class="footer">
     &copy; CollegeDesis

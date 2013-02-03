@@ -1,15 +1,36 @@
-<input class="search" id="search" type="text" placeholder="Search" autocomplete="off">
-<ul class="djs">
-  <% for dj in @djs%>
-    <li class="djItem" data-name="<%= dj.full_name.parameterize %>" data-stage-name="<%= dj.stage_name.parameterize %>" >
-      <h4><%= dj.stage_name %></h4>
-      <span><% if dj.full_name? %> <%= dj.full_name %> <% else %> No Name <% end %></span>
-      <% if current_competition %>
-        <%= render partial: 'bid_form', locals: {dj: dj} %>
-      <% else %>
-        <p><%= link_to "Sign in to bid!", new_competition_session_url %></p>
-      <% end %>
-    </li>
-    
-  <% end %>
-</ul>
+<div class="main">
+  <input class="search" id="search" type="text" placeholder="Search" autocomplete="off">
+  <ul class="djs">
+    <% for dj in @djs%>
+      <li class="djItem" data-name="<%= dj.full_name.parameterize %>" data-stage-name="<%= dj.stage_name.parameterize %>" >
+        <h4><%= dj.stage_name %></h4>
+        <span><% if dj.full_name? %> <%= dj.full_name %> <% else %> No Name <% end %></span>
+        <% if current_competition %>
+          <%= render partial: 'bid_form', locals: {dj: dj} %>
+        <% else %>
+          <p><%= link_to "Sign in to bid!", new_competition_session_url %></p>
+        <% end %>
+      </li>
+      
+    <% end %>
+  </ul>
+</div>
+
+<aside>
+  <h1>The Best Brown Party!</h1>
+  <h3>Round 2</h3>
+  <p>
+    On February 10th, some of the best South Asian DJs are coming together to play their music for #brownkids all around America. 
+  </p>
+  <p>
+    Each hour of this 8 hour party is sponsored by an amazing event or competition from around the country. To help promote these events, we're auctioning off DJ time. If you're one of these competitions <% if !current_competition %> <%= link_to "sign in", new_competition_session_path %><% end %> and bid to get these DJs to play during your hour!
+  </p>
+  <h3>Recent Bids</h3>
+  <ul>
+    <% for bid in @bids %>
+      <li>
+        <%= bid.competition.name %> bid <%= bid.offering %> on <%= bid.dj.stage_name %>.
+      </li>
+    <% end %>
+  </ul>
+</aside>
