@@ -1,4 +1,6 @@
 Bidwars::Application.routes.draw do
+  devise_for :competitions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
