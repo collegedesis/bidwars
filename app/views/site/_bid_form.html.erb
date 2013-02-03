@@ -1,2 +1,5 @@
-This is the form
-<%= dj %>
+<%= form_for dj.bids.new do |f| %>
+  <%= f.text_area(:offering, size: '50x10') %>
+  <%= f.hidden_field :dj_id, value: dj.id %>
+  <%= f.submit %>
+<% end %>
