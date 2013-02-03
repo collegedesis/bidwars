@@ -27,3 +27,16 @@
     display: block;
   }
 }
+
+aside {
+  ul {
+    background-color: transparentize($brown2, 0.9);
+    padding:10px;
+    li {
+      font-size: $font-size * 0.9;
+      margin-bottom:5px;
+      padding:5px;
+      border-bottom: 1px solid $brown2;
+    }
+  }
+}
