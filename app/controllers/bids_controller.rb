@@ -10,6 +10,7 @@ class BidsController < ApplicationController
   end
 
   def index
+    @bids = Bid.all
   end
 
   def show

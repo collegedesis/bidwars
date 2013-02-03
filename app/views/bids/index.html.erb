@@ -1,0 +1,9 @@
+<div class="main">
+  <ul>
+    <% for bid in @bids %>
+      <li>
+        <%= bid.competition.name %> bid <%= bid.offering %> on <%= bid.dj.stage_name %>.
+      </li>
+    <% end %>
+  </ul>
+</div>
