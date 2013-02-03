@@ -1,2 +1,14 @@
-<h1>Djs#index</h1>
-<p>Find me in app/views/djs/index.html.erb</p>
+<ul>
+  <% for dj in @djs%>
+    <li>
+      <%= dj.stage_name %>
+      <br>
+      <%= dj.full_name %>
+    </li>
+    <% if current_competition %>
+      <%= render partial: 'bid_form', locals: {dj: dj} %>
+    <% else %>
+      <%= link_to "Sign in to bid!", new_competition_session_url %>
+    <% end %>
+  <% end %>
+</ul>

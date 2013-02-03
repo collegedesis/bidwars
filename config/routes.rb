@@ -3,5 +3,5 @@ Bidwars::Application.routes.draw do
   resources :bids
   resources :djs
 
-  root to: 'site#index'
+  root to: 'djs#index'
 end
