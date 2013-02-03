@@ -1,5 +1,6 @@
 <%= form_for dj.bids.new do |f| %>
   <%= f.text_area(:offering, placeholder: "Why should #{dj.stage_name} play for you?") %>
   <%= f.hidden_field :dj_id, value: dj.id %>
+  <%= f.hidden_field :competition_id, value: current_competition.id %>
   <%= f.submit "Bid"%>
 <% end %>
