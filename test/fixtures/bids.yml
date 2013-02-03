@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dj_id: 1
+  competition_id: 1
+  offering: MyText
+
+two:
+  dj_id: 1
+  competition_id: 1
+  offering: MyText
