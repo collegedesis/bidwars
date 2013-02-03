@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203003544) do
+ActiveRecord::Schema.define(:version => 20130203095950) do
 
   create_table "bids", :force => true do |t|
     t.integer  "dj_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130203003544) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
   end
 
   add_index "competitions", ["email"], :name => "index_competitions_on_email", :unique => true
