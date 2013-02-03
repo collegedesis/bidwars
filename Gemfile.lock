@@ -71,6 +71,7 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     orm_adapter (0.4.0)
+    pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.11.4)
       coderay (~> 1.0.5)
@@ -139,6 +140,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
+  pg
   pry-debugger
   pry-rails
   pry-stack_explorer
