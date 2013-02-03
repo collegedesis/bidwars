@@ -3,16 +3,34 @@
 @import url('http://fonts.googleapis.com/css?family=Lato');
 @import 'imports.css.scss';
 
-html { 
-  height:100%;
-}
-
 * {
   margin: 0; 
   padding: 0;
   box-sizing: border-box;
   border: 0;
   vertical-align: baseline;
+}
+
+html { 
+  height:100%;
+  background-color:$brown3;
+  background-image: -webkit-radial-gradient(top left, circle cover, $brown3, darken($brown3, 7%));
+  background-image: -moz-radial-gradient(top left, circle cover, $brown3, darken($brown3, 7%));
+  font-size:$font-size;
+  font-family: $font;
+  color: $brown4;
+}
+body{
+  width: 60%;
+  min-width:1015px;
+  margin:0 auto;
+  background-color:darken($background, 7%);
+  background-image: -webkit-radial-gradient(center center, circle cover, $background, darken($background, 7%));
+  background-image: -moz-radial-gradient(center center, circle cover, $background, darken($background, 7%));
+  -webkit-box-shadow: 0 0 5px 1px lighten($background, 5%);
+  -moz-box-shadow: 0 0 5px 1px lighten($background, 5%);
+  box-shadow: 0 0 5px 1px lighten($background, 5%);
+  
 }
 
 p { 
@@ -22,46 +40,22 @@ p {
 
 li { list-style-type:none; }
 
-a.btn {
-  @include awesome-btn;
+a, a:hover, a:visited {
+  text-decoration:none;
+  color: $link-color;
+  cursor:pointer;
 }
+input[type='submit'], button, a.btn { @include awesome-btn; }
 
-/* Layout */
-body{
-  width: 60%;
-  min-width:1015px;
-  margin:0 auto;
-}
-
-/* Backgrounds and Default Styles */
-body {
-  background-color:darken($background, 7%);
-  background-image: -webkit-radial-gradient(center center, circle cover, $background, darken($background, 7%));
-  background-image: -moz-radial-gradient(center center, circle cover, $background, darken($background, 7%));
-  -webkit-box-shadow: 0 0 5px 1px lighten($background, 5%);
-  -moz-box-shadow: 0 0 5px 1px lighten($background, 5%);
-  box-shadow: 0 0 5px 1px lighten($background, 5%);
-  border: solid 1px lighten($background, 5%);
-}
-html {
-  background-color:$brown3;
-  background-image: -webkit-radial-gradient(top left, circle cover, $brown3, darken($brown3, 7%));
-  background-image: -moz-radial-gradient(top left, circle cover, $brown3, darken($brown3, 7%));
-}
-
-/* Typography */
-
-body {
+input, textarea {
+  padding:5px;
   font-size:$font-size;
-  font-family: $font;
-  color: $brown4;
-  a, a:hover, a:visited {
-    text-decoration:none;
-    color: $link-color;
-    cursor:pointer;
-  }
+  background-color:transparentize($brown2, 0.9);
 }
 
+.content, .header, .nav, .footer { padding: 0 20px; }
+
+.content {}
 .header {
   text-align:center;
   color:$brown3;
@@ -99,15 +93,4 @@ body {
   text-align: center;
   padding:20px;
   background-color:darken($background, 20%);
-}
-
-.content {
-  padding: 0 20px;
-}
-
-input, textarea {
-  width:100%;
-  padding:5px;
-  font-size:$font-size;
-  background-color:transparentize($brown2, 0.9);
 }
