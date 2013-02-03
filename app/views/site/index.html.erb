@@ -1,0 +1,10 @@
+<ul>
+  <% for dj in @djs%>
+    <li>
+      <%= dj.stage_name %>
+      <br>
+      <%= dj.full_name %>
+    </li>
+    <%= render partial: 'bid_form', locals: {dj: dj} %>
+  <% end %>
+</ul>
