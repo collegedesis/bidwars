@@ -1,7 +1,8 @@
 <div class="main">
   <!-- <input class="search" id="search" type="text" placeholder="Search" autocomplete="off"> -->
   <% if current_competition %>
-    <h2><%= current_competition.name %> bids</h2>
+    <h2><%= current_competition.name %> bids...</h2>
+    <br>
   <% end %>
   <ul class="djs">
     <% for dj in @djs %>
