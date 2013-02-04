@@ -7,7 +7,7 @@
   <li class="djItem" data-name="<%= dj.full_name.parameterize %>" data-stage-name="<%= dj.stage_name.parameterize %>" >
     <div class="arrow" id="expand-<%=dj.id %>"></div>
     <%= render partial: 'bid_form', locals: {dj: dj} %>
-    <div class="links">
+    <div class="info">
       <%= render partial: 'social_links', locals: {dj: dj} %>
     </div>
   </li>

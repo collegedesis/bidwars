@@ -1,4 +1,5 @@
-<ul class="links">
+<p><%=dj.full_name %>, otherwise known as <%= dj.stage_name %> can be found at these links:</p>
+<ul id="links-#{dj.id}">
   <% if dj.twitter? %>
     <li><%= link_to image_tag("/assets/icons/twitter.png", size: '16x16'), "//twitter.com/#{dj.twitter}", target: '_blank' %></li>
   <% end %>
