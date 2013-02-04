@@ -4,28 +4,40 @@
   padding:10px;
 }
 .djs {
+
   li.djItem {
-    float:left;
-    width: 260px;
-    margin: 0 40px 20px 0;
-    &:nth-child(2n){
-      margin-right:0;
-    }
+    overflow: hidden;
+    margin-bottom: 10px;
     h4 {
       font-weight:800;
-      display: inline-block;margin-bottom: 5px;
+      margin-bottom: 5px;
     }
     span {
       color: lighten($brown2, 10%);
       font-size: $font-size * 0.8;
     }
+    .submit {
+      float:right;
+    }
   }
-  textarea {
-    margin: 5px 0;
-    font-size: $font-size * 0.9;
-    width:100%;
-    height:100px;
-    display: block;
+  .arrow {
+    float:left;
+    background: url('expand.svg');
+    background-size: 20px 20px;
+    background-position: center;
+    width: 20px;
+    height: 28px;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+  .links {
+    display:none;
+  }
+  .links li {
+    display:inline-block;
+    margin-right: 5px;
+    width:16px;
   }
 }
 
@@ -40,13 +52,4 @@ aside {
       border-bottom: 1px solid $brown2;
     }
   }
-}
-.links  {
-  display:block;
-  overflow: hidden;
-}
-.links li {
-  display:inline-block;
-  margin-right: 5px;
-  width:16px;
 }

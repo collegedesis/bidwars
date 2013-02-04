@@ -1,8 +1,7 @@
 <%= form_for dj.bids.new do |f| %>
-  <%= current_competition.name %> bids
-  <%= f.text_area :offering %>
-  on <%= dj.stage_name %>
+  <%= f.text_field :offering, placeholder: "#{random_bid}" %>
   <%= f.hidden_field :dj_id, value: dj.id %>
   <%= f.hidden_field :competition_id, value: current_competition.id %>
-  <%= f.submit "Bid"%>
+  on <%= dj.stage_name %>
+  <%= f.submit "Bid", class: 'submit' %>
 <% end %>
