@@ -1,7 +1,4 @@
 <div class="main">
-  <p>
-    When you vote for a bid, @CollegeDesis will tweet about it. If you put in your twitter handle (without the @), we'll mention you in it too.
-  </p>
   <ul class="bids">
     <% for bid in @bids %>
       <li>
@@ -17,3 +14,9 @@
     <% end %>
   </ul>
 </div>
+<aside>
+  <h3>Vote</h3>
+  <p>
+    When you vote for a bid, <%= link_to "@CollegeDesis", "//twitter.com/collegedesis" %> will tweet about it. If you put in your twitter handle (without the @), we'll mention you in it too. The more you vote, the more likely the DJ is to pick your bid.
+  </p>
+</aside>

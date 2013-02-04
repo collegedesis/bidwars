@@ -1,6 +1,18 @@
 <p>
   On February 10th, some of the best South Asian DJs are coming together to play their music for #brownkids all around America.
+  <ol>
+    <li>
+      <strong>Attend!</strong>
+      <p>Join the <%=link_to "Facebook event", "//facebook.com/events/"%> and invite all your friends!</p>
+    </li>
+    <li>
+      <strong>Vote!</strong>
+      <p>Visit the <%= link_to "bids page", bids_path %> and vote for your favorite bids!</p>
+    </li>
+    
+  </ol>
 </p>
+
 <h3>Sponsors</h3>
 <ol>
   <li>
@@ -18,15 +30,3 @@
 
 <h3>DJs</h3>
 <p>If you're a DJ, who is not listed on the <%= link_to "home page", djs_path %>, you should email us at <%= mail_to "brownkids@collegedesis.com" %></p>
-
-<h3>Everyone else</h3>
-<ol>
-  <li>
-    <strong>Vote!</strong>
-    <p>Visit the <%= link_to "bids_page", bids_path %> and vote for your favorite bids!</p>
-  </li>
-  <li>
-    <strong>Attend!</strong>
-    <p>Join the <%=link_to "Facebook event", "//facebook.com/events/"%> and invite all your friends!</p>
-  </li>
-</ol>
