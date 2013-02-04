@@ -5,7 +5,7 @@ class BidsController < ApplicationController
       redirect_to bids_path
     else
       flash[:errors] = bid.errors
-      redirect_to root_path
+      redirect_to djs_path
     end
   end
 

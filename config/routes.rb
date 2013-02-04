@@ -6,5 +6,5 @@ Bidwars::Application.routes.draw do
   resources :bids
   resources :djs
   resources :votes, only: [:create]
-  root to: 'djs#index'
+  root to: 'bids#index'
 end
