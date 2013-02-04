@@ -1,11 +1,15 @@
 <div class="main">
-  <ul>
+  <p>
+    When you vote on a bid, @CollegeDesis will tweet about it. We'll mention you in it if you enter your twitter
+  </p>
+  <ul class="bids">
     <% for bid in @bids %>
       <li>
         <%= bid.competition.name %> bid <%= bid.offering %> on <%= bid.dj.stage_name %>.
         <% if !voted?(bid, @ip) %>
           <%= form_for Vote.new do |v| %>
             <%= v.hidden_field :bid_id, value: bid.id %>
+            <%= v.text_field :twitter, placeholder: 'leave out the @' %>
             <%= v.submit "Vote" %>
           <% end %>
         <% end %>
