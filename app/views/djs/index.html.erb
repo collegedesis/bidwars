@@ -1,21 +1,23 @@
 <div class="main">
   <input class="search" id="search" type="text" placeholder="Search" autocomplete="off">
   <% if current_competition %>
-    <%= current_competition.name %> bids
-    <ul class="djs">
-<% for dj in @djs %>
-  <li class="djItem" data-name="<%= dj.full_name.parameterize %>" data-stage-name="<%= dj.stage_name.parameterize %>" >
-    <div class="arrow" id="expand-<%=dj.id %>"></div>
-    <%= render partial: 'bid_form', locals: {dj: dj} %>
-    <div class="info" id="info-<%=dj.id%>">
-      <%= render partial: 'social_links', locals: {dj: dj} %>
-    </div>
-  </li>
-<% end %>
-    </ul>
-  <% else %>
-    <p><%= link_to "Sign in to bid!", new_competition_session_url %></p>
+    <h2><%= current_competition.name %> bids</h2>
   <% end %>
+  <ul class="djs">
+    <% for dj in @djs %>
+      <li class="djItem" data-name="<%= dj.full_name.parameterize %>" data-stage-name="<%= dj.stage_name.parameterize %>" >
+        <div class="arrow" id="expand-<%=dj.id %>"></div>
+        <% if current_competition %>
+          <%= render partial: 'bid_form', locals: {dj: dj} %>
+        <% else %>
+          <p><%= link_to "Sign in", new_competition_session_url %> to bid on <%= dj.stage_name %></p>
+        <% end %>
+        <div class="info" id="info-<%=dj.id%>">
+          <%= render partial: 'social_links', locals: {dj: dj} %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
 <aside>
