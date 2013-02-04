@@ -18,6 +18,7 @@
       <li><%= link_to "Bid on a DJ", root_path %></li>
       <li><%= link_to "See Bids", bids_path %></li>
       <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Sponsors", sponsors_path %></li>
       <li>
         <% if current_competition %>
           <%= link_to "Sign Out", destroy_competition_session_path, method: 'delete' %>
