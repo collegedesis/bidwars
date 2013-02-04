@@ -30,4 +30,12 @@
   <p>
     The more you vote, the more likely the DJ is to pick your bid.
   </p>
+  <h3>Sponsors</h3>
+  <p>
+    <% if current_competition %>
+      Hey <%= current_competition.name %>, <%= link_to "bid", djs_path %> for a DJ now!
+    <% else %>
+      <%= link_to "Sign In", new_competition_session_path %> to bid for a DJ!
+    <% end %>
+  </p>
 </aside>
