@@ -1,7 +1,7 @@
 <div class="main">
   <!-- <input class="search" id="search" type="text" placeholder="Search" autocomplete="off"> -->
   <% if current_competition %>
-    <h2><%= current_competition.name %> bids...</h2>
+    <h2><%= current_competition.name %> offers...</h2>
     <br>
   <% end %>
   <ul class="djs">
@@ -31,7 +31,7 @@
   <ul>
     <% for bid in @bids %>
       <li>
-        <%= bid.competition.name %> bid <%= bid.offering %> on <%= bid.dj.stage_name %>.
+        <%= bid.competition.name %> offered <%= bid.dj.stage_name %> <%= bid.offering %>.
       </li>
     <% end %>
   </ul>

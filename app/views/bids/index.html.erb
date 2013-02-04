@@ -5,7 +5,7 @@
         <li>
           <p>
             <h4><%= bid.created_at.strftime(format='%B %e, %Y') %></h4>
-            <%= bid.competition.name %> bid <em><%= bid.offering %></em> on <%= bid.dj.stage_name %>
+            <%= bid.competition.name %> offered <%= bid.dj.stage_name %> <em><%= bid.offering %></em>
           </p>
           <% if !voted?(bid, @ip) %>
             <%= form_for Vote.new do |v| %>
