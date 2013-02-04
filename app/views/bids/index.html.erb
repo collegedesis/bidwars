@@ -2,21 +2,32 @@
   <ul class="bids">
     <% for bid in @bids %>
       <li>
-        <%= bid.competition.name %> bid <%= bid.offering %> on <%= bid.dj.stage_name %>.
+        <p>
+          <h4><%= bid.created_at.strftime(format='%B %e, %Y') %></h4>
+          <%= bid.competition.name %> bid <em><%= bid.offering %></em> on <%= bid.dj.stage_name %>
+        </p>
         <% if !voted?(bid, @ip) %>
           <%= form_for Vote.new do |v| %>
             <%= v.hidden_field :bid_id, value: bid.id %>
-            <%= v.text_field :twitter, placeholder: 'your twitter. leave out the @' %>
-            <%= v.submit "Upvote" %>
+            twitter.com/<%= v.text_field :twitter, placeholder: 'optional' %>
+            <%= v.submit "Upvote", class: 'submit' %>
           <% end %>
         <% end %>
       </li>
     <% end %>
   </ul>
 </div>
+
+
 <aside>
   <h3>Vote</h3>
   <p>
-    When you vote for a bid, <%= link_to "@CollegeDesis", "//twitter.com/collegedesis" %> will tweet about it. If you put in your twitter handle (without the @), we'll mention you in it too. The more you vote, the more likely the DJ is to pick your bid.
+    When you vote for a bid, <%= link_to "@CollegeDesis", "//twitter.com/collegedesis" %> will tweet about it.
+  </p>
+  <p>
+    Put in your twitter handle (without the @), we'll mention you in it too.
+  </p>
+  <p>
+    The more you vote, the more likely the DJ is to pick your bid.
   </p>
 </aside>

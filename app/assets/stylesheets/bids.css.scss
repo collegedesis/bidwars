@@ -1,8 +1,17 @@
 .bids {
   li {
+    background-color: lighten($brown2, 30%);
     font-size: $font-size * 0.9;
     margin-bottom:10px;
-    padding:5px;
-    border-bottom: 1px solid $brown2;
+    border-bottom: 2px solid $brown2;
+    box-shadow:0px 1px 7px $brown2;
+    padding:10px;
+    .submit {
+      margin-top: -4px;
+      margin-left:10px;
+    }
+    form {
+      padding-bottom:10px;
+    }
   }
 }
