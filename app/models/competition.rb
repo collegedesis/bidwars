@@ -6,7 +6,7 @@ class Competition < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :twitter
   # attr_accessible :title, :body
   has_many :bids
   validates_presence_of :name
