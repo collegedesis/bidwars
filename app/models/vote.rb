@@ -6,9 +6,8 @@ class Vote < ActiveRecord::Base
   after_create :send_tweet
 
   def send_tweet
-    binding.pry
-    tw_user = twitter? ? ".@#{twitter}" : "Someone"
-    str = "#{tw_user} thinks #{bid.dj.twitter_mention} should play for the #{bid.competition.name} hour at #TheBestBrownParty."
+    tw_user = twitter? ? "@#{twitter}" : "Someone"
+    str = "#{tw_user} thinks #{bid.dj.twitter_mention} should play for the #{bid.competition.twitter_mention} hour at #TheBestBrownParty."
     Twitter.update(str)
   end
 end

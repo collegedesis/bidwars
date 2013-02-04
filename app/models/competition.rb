@@ -10,4 +10,8 @@ class Competition < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :bids
   validates_presence_of :name
+
+  def twitter_mention
+    twitter? ? "@#{twitter}" : name
+  end
 end

@@ -7,7 +7,9 @@ class Bid < ActiveRecord::Base
   after_create :send_tweet
 
   def send_tweet
-    str = "#{competition.name} bid #{offering} on #{dj.twitter_mention} for #TheBestBrownParty."
+    str = "#{competition.twitter_mention} bid #{offering} on #{dj.twitter_mention} for #TheBestBrownParty."
+    # If competition has a twitter, str will start with @. So we'll ad a period at the beginning. 
+    competition.twitter? str = ".#{str}"
     Twitter.update(str)
   end
 end
